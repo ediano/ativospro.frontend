@@ -1,5 +1,5 @@
 {
-  "name": "AtivosPro - Frontend",
+  "name": "AtivosPRO Frontend",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
   "features": {
     "ghcr.io/meaningful-ooo/devcontainer-features/fish:1": {},
