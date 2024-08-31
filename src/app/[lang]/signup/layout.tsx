@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
-import { LayoutProps } from "@/@types/global";
+import { LayoutProps, PageProps } from "@/@types/global";
 import { i18n } from "@/configs/i18n-config";
 import { baseUrl } from "@/configs/site";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const languages = i18n.locales.reduce((all, lang) => {
+import { getDictionary } from "@/dictionaries/dictionaries";
+import { languages } from "./languages";
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { collection, standard } = getDictionary<(typeof languages)["en-US"]>(params.lang, languages);
+
+  const pagesByLanguage = i18n.locales.reduce((all, lang) => {
     return { ...all, [lang]: `${lang}/signup` };
   }, {});
 
   return {
-    title: "Sign Up",
-    alternates: { canonical: baseUrl, languages },
+    title: collection.title || standard.title,
+    alternates: { canonical: baseUrl, languages: pagesByLanguage },
   };
 }
 
