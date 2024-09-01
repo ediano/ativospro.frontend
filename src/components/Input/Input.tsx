@@ -1,7 +1,7 @@
 import { forwardRef, InputHTMLAttributes } from "react";
 
 import { classnames } from "@/libs/classnames";
-import { createId } from "@/libs/normalize-text";
+import { createId } from "@/libs/normalizeText";
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   name: string;
@@ -23,7 +23,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
           name={name}
           type={type}
           className={classnames(
-            "h-10 w-full rounded border border-zinc-200 p-2 dark:bg-[var(--bg-end-hex)]",
+            "h-10 w-full rounded border border-zinc-200 p-2 dark:bg-[var(--bg-gradient)]",
             className,
           )}
           {...props}

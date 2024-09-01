@@ -7,10 +7,10 @@ import { getDictionary } from "@/dictionaries/dictionaries";
 import { languages } from "./languages";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { collection, standard } = getDictionary<(typeof languages)["en-US"]>(params.lang, languages);
+  const { collection, standard } = getDictionary<(typeof languages)["en-US"]>(params.locale, languages);
 
-  const pagesByLanguage = i18n.locales.reduce((all, lang) => {
-    return { ...all, [lang]: `${lang}/signup` };
+  const pagesByLanguage = i18n.locales.reduce((all, locale) => {
+    return { ...all, [locale]: `${locale}/signup` };
   }, {});
 
   return {

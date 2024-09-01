@@ -4,12 +4,14 @@
 
 :root {
   --color-start-hex: #000000;
-  --color-hex: #222222;
-  --color-end-hex: #444444;
+  --color-hex: #111111;
+  --color-end-hex: #333333;
 
   --bg-start-hex: #ffffff;
   --bg-hex: #faf2f4;
   --bg-end-hex: #f2f4f8;
+
+  --bg-gradient: linear-gradient(90deg, var(--bg-start-hex) 0%, var(--bg-hex) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,14 +21,17 @@
     --color-end-hex: #f2f4f8;
 
     --bg-start-hex: #000000;
-    --bg-hex: #222222;
-    --bg-end-hex: #444444;
+    --bg-hex: #111111;
+    --bg-end-hex: #333333;
+
+    --bg-gradient: linear-gradient(90deg, var(--bg-start-hex) 0%, var(--bg-hex) 100%);
   }
 }
 
 body {
   color: var(--color-hex);
-  background: var(--bg-hex);
+  background: var(--bg-gradient);
+  min-height: 100vh;
 }
 
 @layer base {
