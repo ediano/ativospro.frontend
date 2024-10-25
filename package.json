@@ -14,19 +14,30 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "codegen": "graphql-codegen --config codegen.config.js -r dotenv/config --project ${--project}",
     "prepare": "husky"
   },
   "dependencies": {
-    "@formatjs/intl-localematcher": "^0.5.4",
-    "negotiator": "^0.6.3",
+    "@apollo/client": "^3.11.6",
+    "@hookform/resolvers": "^3.9.0",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.4.5",
+    "graphql": "^16.9.0",
     "next": "14.2.7",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hook-form": "^7.53.0",
+    "tailwind-merge": "^2.5.2",
+    "zod": "^3.23.8",
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.1",
     "@commitlint/config-conventional": "^19.4.1",
-    "@types/negotiator": "^0.6.3",
+    "@graphql-codegen/cli": "5.0.2",
+    "@graphql-codegen/typescript": "^4.0.9",
+    "@graphql-codegen/typescript-operations": "^4.2.3",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -37,6 +48,6 @@
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5.5.4"
   }
 }

@@ -1,4 +1,6 @@
 export const interpolation = (text: string, props: Record<string, any>) => {
+  if (!text || !props) return "";
+
   const nextText = Object.entries(props).reduce((results, [key, value]) => {
     if (!results) {
       const nextText = text.replace(`{{${key}}}`, value);

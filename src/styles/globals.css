@@ -3,18 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --color-rgb: 255, 255, 255;
-  --background-rgb: 68, 68, 68;
+  --color-start-hex: #000000;
+  --color-hex: #111111;
+  --color-end-hex: #333333;
+
+  --bg-start-hex: #ffffff;
+  --bg-hex: #faf2f4;
+  --bg-end-hex: #f2f4f8;
+
+  --bg-gradient: linear-gradient(90deg, var(--bg-start-hex) 0%, var(--bg-hex) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-rgb: 68, 68, 68;
-    --background-rgb: 255, 255, 255;
+    --color-start-hex: #ffffff;
+    --color-hex: #faf2f4;
+    --color-end-hex: #f2f4f8;
+
+    --bg-start-hex: #000000;
+    --bg-hex: #111111;
+    --bg-end-hex: #333333;
+
+    --bg-gradient: linear-gradient(90deg, var(--bg-start-hex) 0%, var(--bg-hex) 100%);
   }
 }
 
 body {
-  color: rgb(var(--color-rgb));
-  background: rgb(var(--background-rgb));
+  color: var(--color-hex);
+  background: var(--bg-gradient);
+  min-height: 100vh;
+}
+
+@layer base {
+  .container {
+    @apply mx-auto !w-[90%] !max-w-[1280px];
+  }
 }

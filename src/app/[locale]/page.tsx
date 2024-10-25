@@ -2,7 +2,7 @@ export default function HomePage() {
   return (
     <>
       <header>Header</header>
-      <main>Main</main>
+      <main>Home</main>
       <footer>Footer</footer>
     </>
   );
